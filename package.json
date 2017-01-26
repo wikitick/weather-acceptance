@@ -1,5 +1,5 @@
 {
-  "name": "mrharry/weather-acceptance",
+  "name": "@mrharry/weather-acceptance",
   "version": "0.0.1",
   "devDependencies": {
     "babel-cli": "^6.22.2",
