@@ -53,7 +53,7 @@ defineSupportCode(({Given, Then, When}) => {
     Then(/^I expect a (.*?) icon to be displayed for today$/, (weather) => {
 
         const weather_forecast_page = client.page.weather_forecast();
-
+        
         return weather_forecast_page.assert.attributeEquals('@desc1', 'aria-label', weather);
         
     });
@@ -169,7 +169,9 @@ defineSupportCode(({Given, Then, When}) => {
             .verify.containsText('@hour1', list_string.slice(0,4))
             .verify.containsText('@hour2', list_string.slice(5,9))
             .verify.containsText('@hour3', list_string.slice(10,14))
-            .verify.containsText('@hour4', list_string.slice(15,19));
+            .verify.containsText('@hour4', list_string.slice(15,19))
+
+            .verify.elementNotPresent('@hour5');
 
     });
 
@@ -188,7 +190,9 @@ defineSupportCode(({Given, Then, When}) => {
             .verify.containsText('@wed_period5', list_string.slice(20,24))
             .verify.containsText('@wed_period6', list_string.slice(25,29))
             .verify.containsText('@wed_period7', list_string.slice(30,34))
-            .verify.containsText('@wed_period8', list_string.slice(35,39));
+            .verify.containsText('@wed_period8', list_string.slice(35,39))
+
+            .verify.elementNotPresent('@wed_period9');
         
     });
 
@@ -203,8 +207,6 @@ defineSupportCode(({Given, Then, When}) => {
             .waitForElementNotVisible('@hour4', 10000);
 
     });
-
-
-
+    
 
 });
